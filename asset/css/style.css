@@ -1,14 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
 :root {
-    --color-body: #b6cbce;
-    --color-heading: #dfeaff;
-    --color-base: #021d35;
-    --color-base2: #011526;
-    --color-brand: #4fa3f7;
-    --color-brand2: #61c1ff;
-    --sidebar-width: 240px;
-    --font-base: "Bai Jamjuree";
+    --color-body: #cfc9e6;
+    --color-heading: #f8f8ff;
+    --color-base: #1a1a2e;
+    --color-base2: #0f0f1b;
+    --color-brand: #8a2be2; /* Electric Purple */
+    --color-brand2: #ff007f; /* Neon Pink */
+    --sidebar-width: 260px;
+    --font-base: "Space Grotesk", sans-serif;
 }
 
 body {
@@ -25,7 +25,7 @@ h1, h2, h3, h4, h5 {
 a {
     text-decoration: none;
     color: var(--color-body);
-    transition: all 0.4s ease;
+    transition: all 0.4s ease-in-out;
 }
 
 a:hover {
@@ -53,6 +53,8 @@ img {
 
 .bg-base {
     background-color: var(--color-base);
+    border-radius: 8px;
+    box-shadow: 0px 4px 15px rgba(138, 43, 226, 0.3);
 }
 
 .shadow-effect {
@@ -60,7 +62,7 @@ img {
 }
 
 .shadow-effect:hover {
-    box-shadow: -6px 6px 0 0 var(--color-brand);
+    box-shadow: -6px 6px 0 0 var(--color-brand2);
 }
 
 .iconbox {
@@ -70,23 +72,26 @@ img {
     align-items: center;
     justify-content: center;
     font-size: 32px;
-    background-color: var(--color-brand);
+    background: linear-gradient(135deg, var(--color-brand), var(--color-brand2));
     color: var(--color-base);
+    border-radius: 12px;
 }
 
 /* NavBar style */
 .navbar {
     background-color: var(--color-base);
+    border-right: 3px solid var(--color-brand);
 }
 
 .navbar .nav-link {
     font-weight: 700;
     text-transform: uppercase;
     color: #fff;
+    transition: color 0.3s ease-in-out;
 }
 
 .navbar .nav-link:hover {
-    color: var(--color-brand);
+    color: var(--color-brand2);
 }
 
 .navbar .nav-link.active {
@@ -97,12 +102,13 @@ img {
     .navbar {
         min-height: 100vh;
         width: var(--sidebar-width);
-        background: linear-gradient(rgba(2, 29, 53, 0.8), rgba(2, 29, 53, 0.8)), url(../Images/engineer.PNG);
+        background: linear-gradient(rgba(26, 26, 46, 0.9), rgba(15, 15, 27, 0.9)), url(../Images/engineer.PNG);
         background-size: cover;
         background-position: center;
     }
     .navbar-brand img {
         border: 8px solid var(--color-brand);
+        border-radius: 50%;
     }
 
     /* CONTENT WRAPPER */
@@ -115,19 +121,21 @@ img {
 .btn {
     padding: 12px 28px;
     font-weight: 700;
+    border-radius: 30px;
 }
 
 .btn-brand {
-    background-color: var(--color-brand2);
-    border-color: var(--color-brand2);
+    background: linear-gradient(135deg, var(--color-brand), var(--color-brand2));
+    border: none;
+    color: #fff;
 }
 
 .btn-brand:hover, .btn-brand:focus {
-    background-color: var(--color-brand);
+    background: var(--color-brand2);
     color: var(--color-base2);
-    border-color: var(--color-brand);
 }
 
+/* Link Custom */
 .link-custom {
     font-weight: 700;
     position: relative;
@@ -137,11 +145,11 @@ img {
     content: "";
     width: 0%;
     height: 2px;
-    background-color: var(--color-brand);
+    background: linear-gradient(135deg, var(--color-brand), var(--color-brand2));
     position: absolute;
     left: 0;
     top: 110%;
-    transition: all 0.4s;
+    transition: all 0.4s ease-in-out;
 }
 
 .link-custom:hover::after {
@@ -149,12 +157,27 @@ img {
 }
 
 /* CARD */
+.card-custom {
+    background: var(--color-base);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card-custom:hover {
+    transform: translateY(-8px);
+    box-shadow: 0px 10px 20px rgba(255, 0, 127, 0.3);
+}
+
 .card-custom .card-custom-image {
     overflow: hidden;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
 }
 
 .card-custom .card-custom-image img {
     transition: all 0.4s ease;
+    border-radius: 12px;
 }
 
 .card-custom:hover .card-custom-image img {
